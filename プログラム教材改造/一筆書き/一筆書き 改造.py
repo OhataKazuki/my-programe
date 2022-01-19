@@ -22,7 +22,6 @@ mx = 1 #x座標
 my = 1 #y座標
 yuka = 0 #塗る床の面積
 
-#改造ポイント---------------------------------------
 #パズルの大きさ定義
 yoko = 9 
 tate = 6
@@ -68,9 +67,9 @@ def set_block():
     _block_position = []
     count = 0
     #block_num分追加
-    while count < block_num:
-        position_1 = random.randint(1, tate)
-        position_2 = random.randint(1, yoko)
+    while count <= block_num:
+        position_1 = random.randint(2, tate-1)
+        position_2 = random.randint(2, yoko-1)
         #ブロックが（1,1）以外、新しい座標の時に追加
         if (position_1,position_2) != (1,1):
             if not (position_1,position_2) in block_position:
@@ -78,8 +77,6 @@ def set_block():
                 count += 1
   
     return _block_position
-#------------------------------------------------
-
 
 #操作のメイン関数
 def main_proc():
@@ -150,7 +147,7 @@ for y in range(height):
             canvas.create_rectangle(x*80, y*80, x*80+79, y*80+79, fill="skyblue", width=0)
 
 #画像の表示
-img = tkinter.PhotoImage(file="neko.png")
+img = tkinter.PhotoImage(file="mimi_s.png")
 canvas.create_image(mx*80+40, my*80+40, image=img, tag="MYCHR")
 
 #プログラムの実行

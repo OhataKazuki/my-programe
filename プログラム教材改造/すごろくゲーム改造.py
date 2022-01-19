@@ -40,8 +40,10 @@ while True:
     
     if pl_rest == 0:
         input("Enterを押すとあなたのコマが進みます")
-        pl_pos = pl_pos + random.randint(1,6)
+        delta = random.randint(1,6)
+        pl_pos = pl_pos + delta
         #改造ポイント、イベントの定義------------
+        print(f"あなたは、{delta}マス進んだ")
         if pl_pos == rest_pos1:
             print("あなたは1回お休み")
             pl_rest = 1
@@ -66,7 +68,9 @@ while True:
     
     if com_rest == 0:
         input("Enterを押すとコンピュータのコマが進みます")
-        com_pos = com_pos + random.randint(1,6)
+        delta = random.randint(1,6)
+        com_pos = com_pos + delta
+        print(f"コンピューターは、{delta}マス進んだ")
         if com_pos == rest_pos1:
             print("コンピューターは1回お休み")
             com_rest = 1
