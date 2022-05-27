@@ -1,4 +1,4 @@
-# my-programe
+# my-program
 私が作成したプログラムを保存
 
 プログラム説明
